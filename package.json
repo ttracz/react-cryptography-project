@@ -18,8 +18,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "predeployLive": "npm run build",
+    "deployLive": "npm run cleanup && gh-pages -d build -b deploy -e build",
+    "cleanup": "npm rm -rf node_modules/gh-pages/.cache"
   },
   "devDependencies": {
     "gh-pages": "^1.1.0"
